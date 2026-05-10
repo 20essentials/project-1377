@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && gh-pages -d dist/",
+    "build": "tsc -b && vite build",
+    "deploy": "tsc -b && vite build && gh-pages -d dist/",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
