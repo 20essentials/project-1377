@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --zoom: 1;
+  --header-height: 0px;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 4px;
+}
+
+/* debería ser pr-2 pero bueno, no voy a tocar tailwind */
+.contain-strict {
+  padding-right: 8px;
+}
+
+section:has(.zoom) {
+  /* para menos de 375px */
+  scale: 0.55;
+  transition: scale 0.3s ease-in-out;
+
+  @media (width >= 375px) {
+    scale: 0.65;
+  }
+
+  @media (width >= 425px) {
+    scale: 0.73;
+  }
+
+  @media (width >= 768px) {
+    scale: 1;
+  }
+}
+
+.zoom {
+  transform: scale(var(--zoom));
+}
+
+.icon {
+  & :is(path, rect, circle, ellipse, line, polygon, polyline) {
+    stroke: currentColor;
+  }
+}
+
+@font-face {
+  font-family: Righteous;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/righteous.woff2') format('woff2');
+}
