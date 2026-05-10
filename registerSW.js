@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/favicon-maker/sw.js', { scope: '/favicon-maker/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/project-1377/sw.js', { scope: '/project-1377/' })})}
